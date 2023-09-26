@@ -1,9 +1,10 @@
-import{BsCartPlus} from "react-icons/bs"
+import{TbShoppingCart} from "react-icons/tb"
+
 
 const CartWidget = () => {
   return (
     <div className="carritoStyle">
-        <BsCartPlus/>
+        <TbShoppingCart/>
         <span className="contadorStyle">0</span>    
     </div>
   )
