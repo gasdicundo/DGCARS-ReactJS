@@ -4,6 +4,7 @@ import Joyeria from './pages/Joyeria'
 import Ropadehombre from './pages/Ropadehombre'
 import { Route, Routes } from 'react-router'
 import ItemListContainer from './components/Items/ItemListContainer'
+import Footer from './components/Footer/Footer'
 
 import Detalle from './pages/Detalle'
 
@@ -19,6 +20,8 @@ const App = () => {
         <Route path='/category/:categoryId' element={<ItemListContainer/>}/>
 
       </Routes>
+
+      <Footer />
 
     </>
   )

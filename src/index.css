@@ -150,3 +150,18 @@ p{
 .buttons:hover{
     box-shadow: 3px 4px 5px gray;
 }
+
+footer{
+    display: flex;
+    margin: auto;
+    background-color: black;
+    color: white;
+    margin-top: 20px;
+    height: 100px;
+}
+
+.textoFooter{
+    display: flex;
+    margin: auto;
+    font-family: 'Mooli', sans-serif;
+}

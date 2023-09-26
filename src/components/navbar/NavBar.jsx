@@ -12,8 +12,9 @@ const NavBar = () => {
       <Navbar.Brand href="#home">DG - Productos</Navbar.Brand>
       <Nav className="categorias">
         <NavLink className={( { isActive} ) => isActive ? "link-active" : ""} to="/">Inicio</NavLink>
-        <NavLink className={( { isActive} ) => isActive ? "link-active" : ""} to="/category/men'sclothing">Mens clothing</NavLink>
+        <NavLink className={( { isActive} ) => isActive ? "link-active" : ""} to={`/category/${"men's clothing"}`}>Mens clothing</NavLink>
         <NavLink className={ ({ isActive} ) => isActive ? "link-active" : ""} to="/category/jewelery" >Jewelery</NavLink>
+        <NavLink className={ ({ isActive} ) => isActive ? "link-active" : ""} to="/category/electronics" >Electronics</NavLink>
       </Nav>
       <CartWidget/>
     </Container>

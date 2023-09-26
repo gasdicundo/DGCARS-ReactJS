@@ -3,9 +3,10 @@ import { Row } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import ItemList from './ItemList';
 import useFetch from '../../Hooks/useFetch';
+import { useParams } from 'react-router-dom';
 const ItemListContainer = () => {
-    const [items] = useFetch("https://fakestoreapi.com/products?limit=6")
- 
+    const {categoryId}= useParams()
+    const [items] = useFetch("https://fakestoreapi.com/products?limit=12", categoryId)
     return (
         <Container>
             <Row>
