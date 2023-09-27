@@ -2,13 +2,22 @@ import React, { useEffect } from 'react'
 import Counter from '../Counter/Counter'
 
 const ItemDetail = ({ item }) => {
+    const handleAgregarAlCarritoClick = () => {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Pagina en progreso',
+            footer: '<a>Proximamente habilitado</a>'
+          })
+        // alert(`Se ha agregado "${item.title}" al carrito`);
+      };
 
     return (
         <div className='detalles'>
             <div className='cardDetalles'>
             <h5>{item.title}</h5>
             <img src={item.image} />
-            <p>
+            <p className='textoDescripcion'>
                 Description: {item.description}
             </p>
             <p>
@@ -18,7 +27,9 @@ const ItemDetail = ({ item }) => {
                 Category:  {item.category}
             </p>
             <Counter />
-            <button className='agregarAlCarrito'>Agregar al carrito</button>
+            <button className='agregarAlCarrito' id='agregarAlCarrito' onClick={handleAgregarAlCarritoClick}>
+            Agregar al carrito
+          </button>
         </div>
         </div>
     )

@@ -2,21 +2,32 @@
 
 
 .link-active {
-    color: rgb(75, 57, 117);
+    color: rgb(255, 255, 255);  
 }
 
+
 .navBar{
-    background-color: rgba(0, 0, 0, 0.5);   
+    background-color: rgba(0, 0, 0, 0.5); 
+    text-decoration: none;  
+    text-transform: uppercase;
+
+}
+
+NavLink{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
 }
 
 .categorias{
     gap: 50px;
+    text-decoration: none;
+    color: white;
 }
 
 .cardStyle{
     width: 300px;
     margin-top: 30px;
-    background-color: aquamarine;
     align-items: center;
     box-shadow: 8px 10px 12px gray;
 }
@@ -33,7 +44,7 @@
     font-family: 'Mooli', sans-serif;
     border: 6px black solid;
     box-shadow: 8px 10px 12px gray;
-    background-color: antiquewhite;
+    background-color:dimgrey;
 }
 
 .detalles{
@@ -164,4 +175,9 @@ footer{
     display: flex;
     margin: auto;
     font-family: 'Mooli', sans-serif;
+}
+
+.textoDescripcion{
+    margin-top: 10px;
+    text-align: justify;
 }
