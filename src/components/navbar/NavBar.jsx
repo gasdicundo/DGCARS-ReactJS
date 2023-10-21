@@ -11,9 +11,9 @@ const NavBar = () => {
       <Navbar.Brand href="#home">DG - Productos</Navbar.Brand>
       <Nav className="categorias">
         <NavLink className={( { isActive} ) => isActive ? "link-active" : ""} to="/">Inicio</NavLink>
-        <NavLink className={( { isActive} ) => isActive ? "link-active" : ""} to="/category/accesorios">Acceosrios</NavLink>
-        <NavLink className={ ({ isActive} ) => isActive ? "link-active" : ""} to="/category/lavado" >Lavado</NavLink>
-        <NavLink className={ ({ isActive} ) => isActive ? "link-active" : ""} to="/category/mecanica" >Mecanica</NavLink>
+        <NavLink className={( { isActive} ) => isActive ? "link-active" : ""} to="/category/Accesorios">Acceosrios</NavLink>
+        <NavLink className={ ({ isActive} ) => isActive ? "link-active" : ""} to="/category/Lavado">Lavado</NavLink>
+        <NavLink className={ ({ isActive} ) => isActive ? "link-active" : ""} to="/category/Mecanica">Mecanica</NavLink>
         {/* <NavLink className={( { isActive} ) => isActive ? "link-active" : ""} to="/cart">Cart</NavLink> */}
       </Nav>
       <NavLink className={( { isActive} ) => isActive ? "link-active" : ""} to="/cart"><CartWidget/></NavLink>

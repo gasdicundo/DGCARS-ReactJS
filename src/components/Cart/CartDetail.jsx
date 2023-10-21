@@ -4,6 +4,8 @@ import styles from './style.module.css'
 import { addDoc, collection, getFirestore } from "firebase/firestore"
 import { useNavigate } from 'react-router-dom'
 import FormComponent from '../Form/FormComponent'
+
+
 const CartDetail = () => {
     const [buyer, setBuyer] = useState({
         name: "",
@@ -61,11 +63,13 @@ const CartDetail = () => {
         }
     }
 
+    
+
 
     return (
-        <div>
-            CART
-            <FormComponent 
+        <div className='cartProducts'>
+            
+            <FormComponent
                 formData={buyer}
                 inputChange={handleChange}
                 onSumbit={onSubmit}
@@ -74,20 +78,22 @@ const CartDetail = () => {
 
             {
                 cart.map(el => (
-                    <div className={styles.container} key={el.id}>
+                    
+                    <div className='cartDetail' key={el.id}>
                         <div className={styles.cardBody}>
-                            <p >Product: {el.name}</p>
+                            <p >Producto: {el.name}</p>
                             <p >Cantidad: {el.quantity}</p>
                         </div>
-                        <img src={el.image} className={styles.image} />
+                        <img src={el.image} className='imgCart' />
                         <button onClick={() => removeItem(el.id)} className={styles.cartButton}>Eliminar</button>
-                    </div>
-                ))
-            }
-            {
+                    {
                 cart.length > 0 &&
                 <button className='btn btn-primary' onClick={onSubmit}>Create order</button>
             }
+                    </div>
+                ))
+            }
+            
             {
                 orderId && <span>Oreder created: {orderId}</span>
             }
