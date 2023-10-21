@@ -61,6 +61,8 @@ const CartDetail = () => {
             // Hay errores, establece el estado de errores para mostrarlos al usuario
             setErrors(errorLocal);
         }
+
+        
     }
 
     
@@ -89,7 +91,7 @@ const CartDetail = () => {
 
                     {
                 cart.length > 0 &&
-                <button className='btn btn-primary' onClick={onSubmit}>Create order</button>
+                <button className='btn btn-primary' onClick={onSubmit} >Create order</button>
             }
                     </div>
                 ))

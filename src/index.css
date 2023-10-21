@@ -220,3 +220,8 @@ footer{
 .imgCart{
     width: 100px;
 }
+
+.contentWrap{
+    
+    flex: 1;
+}
