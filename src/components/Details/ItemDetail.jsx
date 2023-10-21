@@ -5,19 +5,21 @@ import styles from './style.module.css'
 const ItemDetail = ({ item, onAdd}) => {
 
     return (
-        <div className={styles.contianer}>
+        <div className='detalles'>
+            <div className='cardDetalles'>
             <h5 className={styles.title} >{item.name}</h5>
             <img src={item.image} className={styles.image}/>
-            <p>
-                Stock: {item.stock}
+            <p className='textoDescripcion'>
+               Description: {item.description}
             </p>
             <p>
-                Precio: {item.price}
+                $ {item.price}
             </p>
             <p>
                 Categoria:  {item.category}
             </p>
             <Counter onAdd={onAdd} />
+        </div>
         </div>
     )
 }
