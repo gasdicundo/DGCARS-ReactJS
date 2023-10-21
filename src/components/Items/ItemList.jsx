@@ -7,7 +7,7 @@ const ItemList = ({ items }) => {
         <>
             {
                 items.map((item) => (
-                    <Col md={5} lg={4} sm={12} key={item.id} >
+                    <Col md={4} lg={4} sm={12} key={item.id} >
                         <CardItem item={item} />
                     </Col>
                 ))

@@ -1,9 +1,8 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import CartWidget from './CartWidget';
-
 
 const NavBar = () => {
   return (
@@ -12,11 +11,12 @@ const NavBar = () => {
       <Navbar.Brand href="#home">DG - Productos</Navbar.Brand>
       <Nav className="categorias">
         <NavLink className={( { isActive} ) => isActive ? "link-active" : ""} to="/">Inicio</NavLink>
-        <NavLink className={( { isActive} ) => isActive ? "link-active" : ""} to={`/category/${"men's clothing"}`}>Mens clothing</NavLink>
-        <NavLink className={ ({ isActive} ) => isActive ? "link-active" : ""} to="/category/jewelery" >Jewelery</NavLink>
-        <NavLink className={ ({ isActive} ) => isActive ? "link-active" : ""} to="/category/electronics" >Electronics</NavLink>
+        <NavLink className={( { isActive} ) => isActive ? "link-active" : ""} to="/category/accesorios">Acceosrios</NavLink>
+        <NavLink className={ ({ isActive} ) => isActive ? "link-active" : ""} to="/category/lavado" >Lavado</NavLink>
+        <NavLink className={ ({ isActive} ) => isActive ? "link-active" : ""} to="/category/mecanica" >Mecanica</NavLink>
+        {/* <NavLink className={( { isActive} ) => isActive ? "link-active" : ""} to="/cart">Cart</NavLink> */}
       </Nav>
-      <CartWidget/>
+      <NavLink className={( { isActive} ) => isActive ? "link-active" : ""} to="/cart"><CartWidget/></NavLink>
     </Container>
     
   </Navbar>
@@ -24,4 +24,3 @@ const NavBar = () => {
 }
 
 export default NavBar;
-

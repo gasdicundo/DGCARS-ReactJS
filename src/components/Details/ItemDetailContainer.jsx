@@ -1,14 +1,26 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import ItemDetail from './ItemDetail'
-import useFetch from '../../Hooks/useFetch'
+import CartContext from '../../context/cartContext/CartContext';
+import { getOneDocument } from '../../services/firebaseService';
+import { doc, getDoc, getFirestore} from "firebase/firestore"
 
-const ItemDetailContainer = ( { id }) => {
-    const [item] = useFetch(`https://fakestoreapi.com/products/${id}`)
+const ItemDetailContainer = ({ id }) => {
+    const [item, setitem] = useState(null);
+    const onAdd = (q) => {
+        addItem(item, q)
+    };
+    
+    const { addItem } = useContext(CartContext);
+   
+    useEffect( () => {
+        getOneDocument("items",id)
+        .then(res => setitem(res))
+    }, [])
     return (
         <>
             {
                 item !== null &&
-                <ItemDetail item={item} />
+                <ItemDetail item={item} onAdd={onAdd} />
 
             }
         </>

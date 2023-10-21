@@ -5,7 +5,7 @@ const CartWidget = () => {
   return (
     <div className="carritoStyle">
         <TbShoppingCart/>
-        <span className="contadorStyle">0</span>    
+        {/* <span className="contadorStyle">0</span>     */}
     </div>
   )
 }

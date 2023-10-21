@@ -1,38 +1,26 @@
-import React from 'react';
+import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 
-
 const CardItem = ({ item }) => {
-  const handleAgregarAlCarritoClick = () => {
-    Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Pagina en progreso',
-        footer: '<a>Proximamente habilitado</a>'
-      })
-    // alert(`Se ha agregado "${item.title}" al carrito`);
-  };
-
-  return (
-    <Card className='cardStyle'>
-      <Card.Img className='cardImg' variant="top" src={item.image}/>
-      <Card.Body className='cardBody'>
-        <Card.Title className='cardTitle'>{item.title}</Card.Title>
-        <Card.Text>
-          $ {item.price}
-        </Card.Text>
-        <Link to={`/detalle/${item.id}`}>
-          <button className='detalle'>Detalles</button>
-        </Link>
-        <div className='CounterCard'>
-          <button className='agregarAlCarrito' id='agregarAlCarrito' onClick={handleAgregarAlCarritoClick}>
-            Agregar al carrito
-          </button>
-        </div>
-      </Card.Body>
-    </Card>
-  );
+    return (
+        <Card style={{ width: '18rem' }}className='mx-2 mt-4' >
+            <Card.Img variant="top" src={item.image}  style={{ height: '30%' }} />
+            <Card.Body>
+                <Card.Title>{item.name}</Card.Title>
+                <Card.Text>
+                    Stock: {item.stock}
+                </Card.Text>
+                <Card.Text>
+                    Price: {item.price}
+                </Card.Text>
+                <Link to={`/detalle/${item.id}`}>
+                    <Button variant="primary">Ver detalles</Button>
+                </Link>
+            </Card.Body>
+        </Card>
+        
+    );
 }
 
-export default CardItem;
+export default CardItem

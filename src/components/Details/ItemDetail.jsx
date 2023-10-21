@@ -1,36 +1,23 @@
 import React, { useEffect } from 'react'
 import Counter from '../Counter/Counter'
+import styles from './style.module.css'
 
-const ItemDetail = ({ item }) => {
-    const handleAgregarAlCarritoClick = () => {
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Pagina en progreso',
-            footer: '<a>Proximamente habilitado</a>'
-          })
-        // alert(`Se ha agregado "${item.title}" al carrito`);
-      };
+const ItemDetail = ({ item, onAdd}) => {
 
     return (
-        <div className='detalles'>
-            <div className='cardDetalles'>
-            <h5>{item.title}</h5>
-            <img src={item.image} />
-            <p className='textoDescripcion'>
-                Description: {item.description}
+        <div className={styles.contianer}>
+            <h5 className={styles.title} >{item.name}</h5>
+            <img src={item.image} className={styles.image}/>
+            <p>
+                Stock: {item.stock}
             </p>
             <p>
-                $ {item.price}
+                Precio: {item.price}
             </p>
             <p>
-                Category:  {item.category}
+                Categoria:  {item.category}
             </p>
-            <Counter />
-            <button className='agregarAlCarrito' id='agregarAlCarrito' onClick={handleAgregarAlCarritoClick}>
-            Agregar al carrito
-          </button>
-        </div>
+            <Counter onAdd={onAdd} />
         </div>
     )
 }

@@ -1,3 +1,15 @@
+.link-active {
+    color: rgb(114, 69, 229);
+}
+.navlink {
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.error {
+    border: red 1px solid;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
 
 

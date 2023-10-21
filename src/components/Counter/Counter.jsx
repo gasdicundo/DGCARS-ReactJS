@@ -1,22 +1,23 @@
 import React, { useState } from 'react'
 
-const Counter = () => {
-    const [count, setCount] = useState(0)
+const Counter = ({onAdd, text = "Agregar al carrito", q = 1}) => {
+    const [count, setCount] = useState(q)
 
     const increment = () => {
         
         setCount(count + 1)
     }
     const decrement = () => {
-        if(count > 0){
+        if(count > 1){
             setCount(count - 1)
         }
     }
   return (
-    <div className='contador'>
-        <button className='buttonAgregar' onClick={increment}>Agregar</button>
-        <span className='contadorNumero'>{ count }</span>
-        <button className='buttonRestar' onClick={decrement}>Restar</button>
+    <div>
+        <button onClick={increment}>Agregar</button>
+        <span>{ count }</span>
+        <button onClick={decrement}>Restar</button>
+        <button onClick={() => onAdd(count) }>{text}</button>
     </div>
   )
 }
