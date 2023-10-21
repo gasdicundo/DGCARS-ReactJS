@@ -85,7 +85,8 @@ const CartDetail = () => {
                             <p >Cantidad: {el.quantity}</p>
                         </div>
                         <img src={el.image} className='imgCart' />
-                        <button onClick={() => removeItem(el.id)} className={styles.cartButton}>Eliminar</button>
+                        <button onClick={() => removeItem(el.id, el.quantity)} className={styles.cartButton}>Eliminar</button>
+
                     {
                 cart.length > 0 &&
                 <button className='btn btn-primary' onClick={onSubmit}>Create order</button>
